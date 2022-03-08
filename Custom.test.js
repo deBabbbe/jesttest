@@ -10,7 +10,7 @@ describe("sum", () => {
   });
 });
 
-describe("Tree", () => {
+describe("Tree with", () => {
   it("1 line", () => {
     const expected = "*";
     expect(tree("*", 1)).toEqual(expected);
@@ -24,6 +24,11 @@ describe("Tree", () => {
   it("3 lines", () => {
     const expected = "  *  \n" + " *** \n" + "*****";
     expect(tree("*", 3)).toEqual(expected);
+  });
+
+  it("3 lines, different sign", () => {
+    const expected = "  #  \n" + " ### \n" + "#####";
+    expect(tree("#", 3)).toEqual(expected);
   });
 
   it("4 lines", () => {
