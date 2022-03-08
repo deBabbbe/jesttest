@@ -1,7 +1,11 @@
 const { sum } = require("./Custom");
+const each = require("jest-each").default;
 
 describe("sum", () => {
-  it("sum of two values", () => {
-    expect(sum(1, 1)).toBe(2);
+  each([
+    [1, 2, 3],
+    [2, 2, 4],
+  ]).test("returns the result of adding %d to %d'", (a, b, res) => {
+    expect(sum(a, b)).toBe(res);
   });
 });
